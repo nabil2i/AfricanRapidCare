@@ -1,0 +1,7 @@
+__pycache__
+alxdump.sql
+env
+dumps
+deployment
+generatingdata.py
+.vscode
