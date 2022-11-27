@@ -18,6 +18,7 @@ from models.specialization import Specialization
 import requests
 import random
 import json
+import os
 
 
 @app_views.route('/doctors',
@@ -148,7 +149,7 @@ def doctors_search(patient_id):
             origin_long = str(longitude1)
             dest_lat = str(office.latitude)
             dest_long = str(office.longitude)
-            API_KEY = "AIzaSyDtbnweO6DRVJpIQD4oCqXBeFC5pvyMOOs"
+            API_KEY = os.environ.get('ARC_GOOGLE_API_KEY')
             url2 = url1 + origin_lat + "%2C" + origin_long
             url3 = url2 + "&destinations=" + dest_lat + "%2C" + dest_long
             url = url3 + "&key=" + API_KEY
